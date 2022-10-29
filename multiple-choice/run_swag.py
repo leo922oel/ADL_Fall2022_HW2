@@ -237,3 +237,13 @@ class DataCollatorForMultipleChoice:
         # Add back labels
         batch["labels"] = torch.tensor(labels, dtype=torch.int64)
         return batch
+
+def main():
+    pass
+
+def _mp_fn(index):
+    # For xla_spawn (TPUs)
+    main()
+
+if __name__ == "__main__":
+    main()
