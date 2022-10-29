@@ -16,12 +16,42 @@ from typing import Optional
 
 @dataclass
 class ModelArguments:
-    pretrained_model_name_or_path:str = field(default='./pretrained/model', metadata={"help": "Path to pretrained model"})
-    config_name:Optional[str] = field(default=None, metadata={"help": "Pretrained config name"})
-    tokenizer_name:Optional[str] = field(default=None, metadata={"help": "Pretrained tokenizer name"})
-    cache_dir:Optional[str] = field(default=None, metadata={"help": " Path to a directory in which a downloaded pretrained model configuration should be cached if the standard cache should not be used"})
-    revision:str = field(default='main', metadata={"help": "The specific model version to use"})
-    use_auth_token:bool = field(default=False, metadata={"help": "Will use the token generated when running `transformers-cli login` (necessary to use this script ""with private models)"})
+    pretrained_model_name_or_path:str = field(
+        default='./pretrained/model', 
+        metadata={
+            "help": "Path to pretrained model"
+        }
+    )
+    config_name:Optional[str] = field(
+        default=None, 
+        metadata={
+            "help": "Pretrained config name"
+        }
+    )
+    tokenizer_name:Optional[str] = field(
+        default=None, 
+        metadata={
+            "help": "Pretrained tokenizer name"
+        }
+    )
+    cache_dir:Optional[str] = field(
+        default=None, 
+        metadata={
+            "help": "Path to a directory in which a downloaded pretrained model configuration should be cached if the standard cache should not be used"
+        }
+    )
+    revision:str = field(
+        default='main', 
+        metadata={
+            "help": "The specific model version to use"
+        }
+    )
+    use_auth_token:bool = field(
+        default=False, 
+        metadata={
+            "help": "Will use the token generated when running `transformers-cli login` (necessary to use this script ""with private models)"
+        }
+    )
 
 # def main():
 parser = HfArgumentParser(ModelArguments)
